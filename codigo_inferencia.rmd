@@ -1,10 +1,45 @@
-#Proyecto Inferencia
+### Proyecto Inferencia
 
-#Integrantes
+### Integrantes
 
-#Gianfranco Astorga
-#Jean Lucas Peñaloza
-#Diego Godoy
+- Gianfranco Astorga
+- Jean Lucas Peñaloza
+- Diego Godoy
+
+### Fecha de entrega
+
+- 03 de Noviembre del 2023
+
+### Indice
+
+- [Introducción](#introducción)
+- [Objetivos](#objetivos)
+  - [Objetivo General](#objetivo-general)
+  - [Objetivos Específicos](#objetivos-específicos)
+- [Marco Teórico](#marco-teórico)
+- [Desarrollo](#desarrollo)
+- [Conclusiones](#conclusiones)
+- [Bibliografía](#bibliografía)
+
+### 1. Introducción
+
+
+
+### 2. Objetivos
+### 2.1 Objetivo General
+### 2.2 Objetivos Específicos
+
+### 3. Marco Teórico
+
+### 4. Desarrollo
+
+### 5. Conclusiones
+
+### 6. Bibliografía
+
+### 7. Codigo
+
+```{r}
 
 library(readr)
 df <- read_delim("GitHub/Proyecto_Inferencia/PROVLOGIS.csv", 
@@ -61,4 +96,4 @@ plot(df$CPS, df$AP,
 
 abline(lm(df$AP ~ df$CPS), col = "red")
 
-
+```
