@@ -1,3 +1,9 @@
+---
+  title: "Proyecto Inferencia"
+  output: pdf_document
+
+---
+
 ### Proyecto Inferencia
 
 ### Integrantes
@@ -38,6 +44,7 @@
 ### 6. Bibliografía
 
 ### 7. Codigo
+
 
 ```{r}
 
