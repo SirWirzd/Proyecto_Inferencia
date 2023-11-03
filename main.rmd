@@ -1,25 +1,23 @@
 ---
 title: "Proyecto Inferencia"
 subtitle: "Universidad Finis Terrae"
-author: 
-  - Gianfranco Astorga
-  - Jean Lucas Peñaloza
-  - Diego Godoy
-date: "3 de noviembre de 2023"
 output:
-  pdf_document:
-    latex_engine: xelatex
-    toc: false
-    number_sections: false
-    fig_caption: true
-    fig_height: 4
-    fig_width: 6
-    latex_engine: xelatex
-    template: path/to/your/custom/template.tex
-    includes:
-      in_header: path/to/your/header.tex
-      before_body: path/to/your/before_body.tex
+  pdf_document: default
+  html_document: default
+  word_document: default
 ---
+
+\begin{center}
+  \includegraphics[width=6cm]{Imagenes_informe/LOGO-UFT-WEB.png}
+     \vspace{2 cm}
+
+  \normalsize \author{Gianfranco Astorga, Jean Lucas Peñaloza, Diego Godoy}
+  \vspace{2 cm}
+
+  \normalsize \date{3 de noviembre de 2023}
+  \vspace{2 cm}
+
+\end{center}
 
 \newpage
 
@@ -148,7 +146,8 @@ Para la carga de datos se utilizó el siguiente código:
 
 library(readr)
 
-df <- read_delim("C:/Users/choco/OneDrive/Documentos/GitHub/Proyecto_Inferencia/PROVLOGIS.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE) # nolint
+df <- read_delim("C:/Users/choco/OneDrive/Documentos/GitHub/Proyecto_Inferencia/PROVLOGIS.csv", # nolint
+delim = ";", escape_double = FALSE, trim_ws = TRUE) # nolint
 
 View(df)
 ```
@@ -195,7 +194,7 @@ Esto proporcionó una visión general de la tendencia central y la dispersión d
 Para los gráficos de caja el siguiente código:
 
 ```{r}
-# Crear un gráfico de caja para identificar valores atípicos (por ejemplo, en la variable 'Calidad') # nolint
+# Crear un gráfico de caja para identificar valores atípicos # nolint
 
 names(df) <- c("ID", "CPS","AES","FP","AP","IP","CP") # nolint
 
@@ -212,9 +211,10 @@ por lo que son unos valores para comprender la opinión de los clientes sobre la
 Para el gráficos de caja el siguiente código:
 
 ```{r}
-# Crear un gráfico de dispersión para identificar relaciones entre variables (por ejemplo, 'Calidad' y 'Agilidad en la entrega del servicio') # nolint
+# Crear un gráfico de dispersión para identificar relaciones entre variables # nolint
 
-plot(df$CPS, df$AES, xlab = 'Calidad', ylab = 'Agilidad en la entrega del servicio', main = 'Calidad vs. Agilidad en la entrega del servicio') # nolint
+plot(df$CPS, df$AES, xlab = 'Calidad', ylab = 'Agilidad en la entrega del servicio', # nolint
+main = 'Calidad vs. Agilidad en la entrega del servicio') # nolint
 ```
 
 Se generó un gráfico de dispersión utilizando el comando “plot(df$Calidad, df$agilidad entrega, xlab = 'Calidad', ylab = 'Agilidad en la entrega del servicio', main = 'Calidad vs. Agilidad en la entrega del servicio')”.
@@ -226,9 +226,10 @@ Se observó que la mayoría de los puntos de datos se agrupan en la parte superi
 Para la correlación se utilizó el siguiente código:
 
 ```{r}
-# Histograma de una variable (por ejemplo, 'Calidad')
+# Histograma de una variable
 
-hist(df$CPS, breaks = 10, col = 'lightblue', border = 'black', xlab = 'Calidad', main = 'Distribución de Calidad') # nolint
+hist(df$CPS, breaks = 10, col = 'lightblue', border = 'black', # nolint
+xlab = 'Calidad', main = 'Distribución de Calidad') # nolint
 ```
 
 Se generó un histograma utilizando el comando “hist(df$Calidad, breaks = 10, col = 'lightblue', border = 'black', xlab = 'Calidad', main = 'Distribución de Calidad')”.
@@ -299,7 +300,7 @@ Para el gráfico de dispersión se utilizó el siguiente código:
 
 ```{r}
 
-plot(df$CPS, df$AES, 
+plot(df$CPS, df$AES, # nolint
      xlab = "Calidad percibida", ylab = "Agilidad en la entrega del servicio",
      main = "Gráfico de Dispersión: Calidad percibida vs. Agilidad en la entrega") # nolint
 
@@ -316,7 +317,7 @@ Para el gráfico de dispersión se utilizó el siguiente código:
 
 ```{r}
 
-plot(df$CPS, df$FP, 
+plot(df$CPS, df$FP, # nolint
      xlab = "Calidad percibida", ylab = "Flexibilidad en formas de pago",
      main = "Gráfico de Dispersión: Calidad percibida vs. Flexibilidad de pago")
 
@@ -350,7 +351,8 @@ Para el modelo de regresión lineal se utilizó el siguiente código:
 
 ```{r}
 
-# Crear un modelo de regresión lineal simple para predecir la calidad percibida en función de la agilidad en la entrega del servicio # nolint
+# Crear un modelo de regresión lineal simple para predecir la # nolint
+# calidad percibida en función de la agilidad en la entrega del servicio # nolint
 
 model <- lm(df$CPS ~ df$AES)
 
