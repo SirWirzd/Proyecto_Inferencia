@@ -52,6 +52,19 @@ output:
     - [Interpretación del valor p del coeficiente de regresión](#interpretación-del-valor-p-del-coeficiente-de-regresión)
   - [Investigación ANOVA modelo de regresión lineal](#investigación-anova-modelo-de-regresión-lineal)
     - [Interpretación de la tabla ANOVA](#interpretación-de-la-tabla-anova)
+  - [Test de hipótesis para el coeficiente de regresión](#test-de-hipótesis-para-el-coeficiente-de-regresión)
+    - [Interpretación del valor p del coeficiente de regresión](#interpretación-del-valor-p-del-coeficiente-de-regresión)
+  - [Supuestos de normalidad y homocedasticidad](#supuestos-de-normalidad-y-homocedasticidad)
+    - [Interpretación del test de normalidad](#interpretación-del-test-de-normalidad)
+    - [Interpretación del test de homocedasticidad](#interpretación-del-test-de-homocedasticidad)
+  - [Variable dummy](#variable-dummy)
+    - [Interpretación de los coeficientes del modelo](#interpretación-de-los-coeficientes-del-modelo)
+    - [Interpretación del coeficiente de determinación](#interpretación-del-coeficiente-de-determinación)
+    - [Interpretación del valor p del coeficiente de regresión](#interpretación-del-valor-p-del-coeficiente-de-regresión)
+  - [Modelo de regresión lineal "Calidad percibida vs Experiencia del personal"](#modelo-de-regresión-lineal-calidad-percibida-vs-experiencia-del-personal)
+    - [Interpretación de los coeficientes del modelo](#interpretación-de-los-coeficientes-del-modelo)
+    - [Interpretación del coeficiente de determinación](#interpretación-del-coeficiente-de-determinación)
+    - [Interpretación del valor p del coeficiente de regresión](#interpretación-del-valor-p-del-coeficiente-de-regresión) 
 - [Conclusiones](#conclusiones)
 - [Bibliografía](#bibliografía)
 
@@ -529,21 +542,6 @@ Investigación de test de hipótesis para el coeficiente de regresión
 
 El test de hipótesis para el coeficiente de regresión se utiliza para evaluar la significancia de cada coeficiente por separado. Se compara el coeficiente estimado con su error estándar y calcula el p-value para determinar si el coeficiente en cuestión es estadísticamente significativo.
 
-Estos son los siguientes test que se pueden realizar:
-
-- Test t: Este test se utiliza para evaluar la significancia de cada coeficiente por separado. Se compara el coeficiente estimado con su error estándar y calcula el p-value para determinar si el coeficiente en cuestión es estadísticamente significativo.
-- Test F: Este test se usa para evaluar la significancia global del modelo, se compara la variabilidad explicada por el modelo y la variabilidad no explicada por el mismo, por último calcula el p-value para ver si la relación entre variables es significativa.
-
-De la forma en que podemos plantear estos tests son:
-
-- Test t: H0: B1 = 0 vs. H1: B1 =/ 0
-- Test F: H0: B1 = B2 = ... = Bn = 0 vs. H1: al menos un Bi =/ 0
-
-En este caso se realizó el test de hipótesis para el coeficiente de regresión, el cual se utiliza para evaluar la significancia de cada coeficiente por separado. Se compara el coeficiente estimado con su error estándar y calcula el p-value para determinar si el coeficiente en cuestión es estadísticamente significativo.
-
-- Hipótesis Nula (H0)Esta hipótesis plantea que las variables dependientes e independientes no tienen una relación significativa.
-- Hipótesis alternativa (H1)En esta hipótesis, las variables dependientes e independientes si tienen una relación significativa.
-
 Para realizar el test de hipótesis para el coeficiente de regresión se utilizó el siguiente código:
 
 ```{r}
@@ -600,7 +598,7 @@ lo que indica que los residuos no siguen una distribución normal.
 Para interpretar el test de homocedasticidad se debe tener en cuenta que este representa la probabilidad de que los residuos sean homocedásticos. En este caso el valor p del test de homocedasticidad es menor que 0.05,
 lo que indica que los residuos no son homocedásticos.
 
-## 5.10 variable Dummy
+## 5.10 Variable Dummy
 
 Para la variable dummy se utilizó el siguiente código:
 
