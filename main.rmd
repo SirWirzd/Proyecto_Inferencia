@@ -69,12 +69,12 @@ Además, se investigará el concepto de regresión lineal simple a través de re
 # 2. Objetivos
 ## 2.1 Objetivo General
 
-- Realizar un análisis de datos efectivo utilizando R Studio para obtener información relevante y valiosa a partir de conjuntos de datos empresariales.
+- Realizar un modelo que ayude a explicar la calidad percibida por los clientes del servicio en cuestion, en funcion de las variables consideradas de interes.
 
 ## 2.2 Objetivos Específicos
 
-- Realizar un análisis exploratorio de datos en R Studio, utilizando gráficos y estadísticas descriptivas para comprender la distribución y relaciones entre variables clave.
-- Aplicar técnicas de modelado estadístico (regresión lineal, clustering, análisis de series temporales) según sea necesario, para obtener información predictiva o descriptiva.
+- Analizar como funcionan y relacionan las variables sobre el servicio a partir de la implementacion de modelos estadisticos.
+- Investigar proyectos similares que busquen mejorar la calidad de servicios entregados.
 - Interpretar resultados de análisis en R Studio y presentar hallazgos en informes claros y visuales para respaldar decisiones empresariales.
 - Automatizar procesos de análisis de datos mediante scripts y programación en R Studio para futuros análisis eficientes.
 - Colaborar con el equipo para aplicar conocimientos del análisis de datos en decisiones estratégicas de la empresa.
