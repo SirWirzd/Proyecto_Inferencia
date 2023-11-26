@@ -87,6 +87,16 @@ el World Data Bank, a excepción de la variable del Gasto en Educación la cual 
 
 ![Análisis de los datos del Banco](Imagenes_informe/trabajoprevio.png)
 
+ La investigación muestra los resultados obtenidos a través del estudio realizado en restaurantes de primera y segunda categoría de especialidad carnes al grill de la ciudad de Ambato durante el año 2020 con la finalidad de analizar la relación de la calidad en el servicio y el nivel de satisfacción del cliente,
+ las variables que se tomaron en cuenta son: fiabilidad, capacidad de respuesta, seguridad, elementos tangibles y empatía, por otra parte, las dimensiones del índice ACSI son satisfacción, expectativas, calidad percibida, valor percibido, quejas y lealtad del cliente. Por ultimo, para determinar la relación entre ambas variables se aplicó la correlación y regresión lineal para cada restaurante, 
+ evidenciando como resultado la relación positiva y analizando los factores que son considerados a mejorar para satisfacer a los clientes de cada establecimiento.
+
+![Regresión lineal Calidad Servicio grill](Imagenes_informe/regresionlinealparrilla.png)
+
+En este caso, el coeficiente de regresión es muy importante porque mide el cambio de la variable Y por cada unidad de cambio de X, para este restaurante se expresa de la siguiente
+manera: y= 0.24+0.96x, dicho en otras palabras, la pendiente b o x=0.96 estima que, por cada incremento en los elementos de la calidad en el servicio, el nivel de satisfacción del
+cliente aumentará en este restaurante. De igual manera, se obtuvo el coeficiente de determinación (R2) =0.204, indicando que el 21% de la variabilidad del nivel de satisfacción del cliente está explicada por la calidad en el servicio.
+
 # 4. Marco Teórico
 
 Para el marco teórico, se detallarán los contenidos necesarios para la realización de los problemas dados, en el cual se podrán definir los conceptos básicos, matemáticos y físicos, para la ejecución del presente proyecto, en base a la asignatura de inferencia estadística:
@@ -108,7 +118,14 @@ Donde:
 - B0, B1, B2, ..., Bn son los coeficientes de regresión que representan el efecto de cada variable independiente sobre Y.
 - E es el término de error, que captura la variabilidad no explicada por el modelo y se asume que sigue una distribución normal con media cero.
 
+En la regresión lineal, los coeficientes b0​ y b1​ se refieren a la ordenada al origen y la pendiente, respectivamente, en la ecuación de la línea de regresión.
+    Coeficiente de Intercepto (b0​):
+        Definición: b0​ representa la ordenada al origen, es decir, el valor de la variable dependiente cuando la variable independiente es cero.
+        Fórmula: En una regresión lineal simple, la ecuación de la línea es y=b0+b1xy=b0​+b1​x, por lo que b0​ es el valor de yy cuando xx es igual a cero.
 
+    Coeficiente de Pendiente (b1​):
+        Definición: b1​ representa la pendiente de la línea de regresión, es decir, la tasa de cambio en la variable dependiente por unidad de cambio en la variable independiente.
+        Fórmula: La ecuación de la línea de regresión es y=b0+b1xy=b0​+b1​x, y b1​ es el coeficiente asociado con la variable independiente xx. Indica cuánto cambia yy por cada unidad de cambio en xx.
 
 ## 4.2 Correlación Lineal de Pearson
 
