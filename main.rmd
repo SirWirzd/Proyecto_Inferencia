@@ -517,6 +517,167 @@ Para obtener el valor p del estadístico F se utilizó la función “summary(mo
 Para interpretar la tabla ANOVA se debe tener en cuenta que esta representa la variabilidad explicada por el modelo y la variabilidad no explicada por el mismo. En este caso el valor p del estadístico F es menor que 0.05,
 lo que indica que la relación entre la calidad percibida y la agilidad en la entrega del servicio es estadísticamente significativa.
 
+## 5.8 Test de hipótesis para el coeficiente de regresión
+
+Investigación de test de hipótesis para el coeficiente de regresión
+
+El test de hipótesis para el coeficiente de regresión se utiliza para evaluar la significancia de cada coeficiente por separado. Se compara el coeficiente estimado con su error estándar y calcula el p-value para determinar si el coeficiente en cuestión es estadísticamente significativo.
+
+Estos son los siguientes test que se pueden realizar:
+
+- Test t: Este test se utiliza para evaluar la significancia de cada coeficiente por separado. Se compara el coeficiente estimado con su error estándar y calcula el p-value para determinar si el coeficiente en cuestión es estadísticamente significativo.
+- Test F: Este test se usa para evaluar la significancia global del modelo, se compara la variabilidad explicada por el modelo y la variabilidad no explicada por el mismo, por último calcula el p-value para ver si la relación entre variables es significativa.
+
+De la forma en que podemos plantear estos tests son:
+
+- Test t: H0: B1 = 0 vs. H1: B1 =/ 0
+- Test F: H0: B1 = B2 = ... = Bn = 0 vs. H1: al menos un Bi =/ 0
+
+En este caso se realizó el test de hipótesis para el coeficiente de regresión, el cual se utiliza para evaluar la significancia de cada coeficiente por separado. Se compara el coeficiente estimado con su error estándar y calcula el p-value para determinar si el coeficiente en cuestión es estadísticamente significativo.
+
+- Hipótesis Nula (H0)Esta hipótesis plantea que las variables dependientes e independientes no tienen una relación significativa.
+- Hipótesis alternativa (H1)En esta hipótesis, las variables dependientes e independientes si tienen una relación significativa.
+
+Para realizar el test de hipótesis para el coeficiente de regresión se utilizó el siguiente código:
+
+```{r}
+
+# Obtener el valor p del coeficiente de regresión
+
+summary(model)$coefficients[2, 4]
+```
+
+Para obtener el valor p del coeficiente de regresión se utilizó la función “summary(model)$coefficients[2, 4]” y se muestra en la consola.
+
+### 5.8.1 Interpretación del valor p del coeficiente de regresión
+
+Para interpretar el valor p del coeficiente de regresión se debe tener en cuenta que este representa la probabilidad de que el coeficiente de regresión sea igual a cero. En este caso el valor p del coeficiente de regresión es menor que 0.05,
+lo que indica que la relación entre la calidad percibida y la agilidad en la entrega del servicio es estadísticamente significativa.
+
+## 5.9 Supuestos de normalidad y homocedasticidad
+
+Investigación de supuestos de normalidad y homocedasticidad
+
+Los supuestos de normalidad y homocedasticidad son importantes para validar el modelo de regresión lineal. El supuesto de normalidad establece que los residuos siguen una distribución normal con media cero.
+El supuesto de homocedasticidad establece que los residuos tienen una varianza constante. Para validar estos supuestos, se pueden realizar los siguientes tests:
+
+- Test de normalidad: Este test se utiliza para evaluar si los residuos siguen una distribución normal. El valor p del test de normalidad debe ser mayor que 0.05 para que los residuos sigan una distribución normal.
+- Test de homocedasticidad: Este test se utiliza para evaluar si los residuos tienen una varianza constante. El valor p del test de homocedasticidad debe ser mayor que 0.05 para que los residuos sean homocedásticos.
+
+Para realizar el test de normalidad se utilizó el siguiente código:
+
+```{r}
+
+# Test de normalidad
+
+shapiro.test(model$residuals)
+```
+
+Para realizar el test de normalidad se utilizó la función “shapiro.test(model$residuals)” y se muestra en la consola.
+
+```{r}
+
+# Test de homocedasticidad
+
+library(car)
+
+ncvTest(model)
+```
+
+Para realizar el test de homocedasticidad se utilizó la función “ncvTest(model)” y se muestra en la consola.
+
+### 5.9.1 Interpretación del test de normalidad
+
+Para interpretar el test de normalidad se debe tener en cuenta que este representa la probabilidad de que los residuos sigan una distribución normal. En este caso el valor p del test de normalidad es menor que 0.05,
+lo que indica que los residuos no siguen una distribución normal.
+
+### 5.9.2 Interpretación del test de homocedasticidad
+
+Para interpretar el test de homocedasticidad se debe tener en cuenta que este representa la probabilidad de que los residuos sean homocedásticos. En este caso el valor p del test de homocedasticidad es menor que 0.05,
+lo que indica que los residuos no son homocedásticos.
+
+## 5.10 variable Dummy
+
+Para la variable dummy se utilizó el siguiente código:
+
+```{r}
+
+# Crear una variable dummy para la variable "imagen percibida"
+
+df$IP_dummy <- ifelse(df$IP == 1, 1, 0)
+
+# Crear un modelo de regresión lineal simple para predecir la # nolint
+
+# Calidad percibida en función de la imagen percibida
+
+model2 <- lm(df$CPS ~ df$IP_dummy)
+
+# Obtener el resumen del modelo
+
+summary(model2)
+```
+
+Para crear una variable dummy se utilizó la función “ifelse()” y se muestra en la consola.
+
+Para crear el modelo de regresión lineal simple se utilizó la función “lm()” y se muestra en la consola.
+
+Para obtener el resumen del modelo se utilizó la función “summary(model2)” y se muestra en la consola.
+
+### 5.10.1 Interpretación de los coeficientes del modelo
+
+Para interpretar los coeficientes del modelo se realizó un gráfico de regresión lineal que se puede apreciar en la pregunta anterior, en la cual se analizó las variables de calidad percibida y agilidad entrega,
+esto representa la ponderación de cada variable en relación al contexto del problema, el cual es que la empresa busca conocer la calidad percibida por los clientes en función a los factores de interés. Para interpretar estos coeficientes del modelo de regresión lineal las variables explicativas
+se deben mantener constantes mientras que a la variable dependiente se le debe aplicar un aumento debido al signo de su coeficiente, en este caso positivo. Entonces se puede decir que los coeficientes representan los cambios medios de la variable de respuesta para una unidad de cambio de la variable predictora,
+esto mientras que las demás variables permanecen constantes.
+
+### 5.10.2 Interpretación del coeficiente de determinación
+
+Para interpretar el coeficiente de determinación se debe tener en cuenta que este representa la proporción de la variación total de la variable dependiente que es explicada por el modelo de regresión lineal.
+En este caso el coeficiente de determinación es 0.0001, lo que indica que el modelo explica el 0.01% de la variación en la calidad percibida. Por lo tanto, se puede concluir que la imagen percibida no tiene un efecto significativo en la calidad percibida.
+
+### 5.10.3 Interpretación del valor p del coeficiente de regresión
+
+Para interpretar el valor p del coeficiente de regresión se debe tener en cuenta que este representa la probabilidad de que el coeficiente de regresión sea igual a cero. En este caso el valor p del coeficiente de regresión es mayor que 0.05,
+lo que indica que la relación entre la calidad percibida y la imagen percibida no es estadísticamente significativa.
+
+## 5.11 Modelo de regresión lineal "Calidad percibida vs Experiencia del personal"
+
+Para el modelo de regresión lineal se utilizó el siguiente código:
+
+```{r}
+
+# Crear un modelo de regresión lineal simple para predecir la # nolint
+
+# Calidad percibida en función de la experiencia del personal
+
+model3 <- lm(df$CPS ~ df$AP)
+
+# Obtener el resumen del modelo
+
+summary(model3)
+```
+
+Para crear el modelo de regresión lineal simple se utilizó la función “lm()” y se muestra en la consola.
+
+Para obtener el resumen del modelo se utilizó la función “summary(model3)” y se muestra en la consola.
+
+### 5.11.1 Interpretación de los coeficientes del modelo
+
+Para interpretar los coeficientes del modelo se realizó un gráfico de regresión lineal que se puede apreciar en la pregunta anterior, en la cual se analizó las variables de calidad percibida y agilidad entrega,
+esto representa la ponderación de cada variable en relación al contexto del problema, el cual es que la empresa busca conocer la calidad percibida por los clientes en función a los factores de interés. Para interpretar estos coeficientes del modelo de regresión lineal las variables explicativas
+se deben mantener constantes mientras que a la variable dependiente se le debe aplicar un aumento debido al signo de su coeficiente, en este caso positivo. Entonces se puede decir que los coeficientes representan los cambios medios de la variable de respuesta para una unidad de cambio de la variable predictora,
+esto mientras que las demás variables permanecen constantes.
+
+### 5.11.2 Interpretación del coeficiente de determinación
+
+Para interpretar el coeficiente de determinación se debe tener en cuenta que este representa la proporción de la variación total de la variable dependiente que es explicada por el modelo de regresión lineal.
+En este caso el coeficiente de determinación es 0.2859, lo que indica que el modelo explica el 28.59% de la variación en la calidad percibida. Por lo tanto, se puede concluir que la experiencia del personal tiene un efecto positivo en la calidad percibida.
+
+### 5.11.3 Interpretación del valor p del coeficiente de regresión
+
+Para interpretar el valor p del coeficiente de regresión se debe tener en cuenta que este representa la probabilidad de que el coeficiente de regresión sea igual a cero. En este caso el valor p del coeficiente de regresión es menor que 0.05,
+lo que indica que la relación entre la calidad percibida y la experiencia del personal es estadísticamente significativa.
+
 # 6. Conclusiones
 
 Este proyecto enfatizó la importancia fundamental de un servicio al cliente de calidad en un entorno empresarial, independientemente del tamaño o estructura de la empresa. La calidad del servicio no sólo influye en las preferencias de los clientes, sino que también juega un papel importante en la formación de opiniones positivas o negativas sobre la empresa en cuestión. 
@@ -529,6 +690,7 @@ Estos valores atípicos pueden indicar experiencias de los clientes y, por lo ta
 
 Este hallazgo podría tener un impacto significativo en la empresa y guiar los esfuerzos futuros para mejorar el servicio al cliente. En última instancia, este proyecto sienta las bases para análisis y aplicaciones adicionales de modelos de regresión lineal simples. Estos modelos nos permiten comprender mejor las relaciones entre variables y predecir la calidad percibida en función de factores clave. La información recopilada a través de este análisis exploratorio de datos es fundamental para tomar decisiones estratégicas que aumenten la satisfacción del cliente y, en última instancia, conduzcan al éxito empresarial.
 
+Cabe destacar que el modelo de regresión lineal simple que se realizó para predecir la calidad percibida en función de la agilidad en la entrega del servicio, obtuvo un coeficiente de determinación de 0.2859, lo que indica que el modelo explica el 28.59% de la variación en la calidad percibida.
 
 # 7. Bibliografía
 
