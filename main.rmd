@@ -93,6 +93,7 @@ Para el marco teórico, se detallarán los contenidos necesarios para la realiza
 
 ## 4.1 Regresión Lineal
 
+La regresión lineal es un método estadístico que se utiliza para modelar la relación entre una variable dependiente y una o más variables independientes al tratar de encontrar una ecuación lineal que mejor se ajuste a los datos observados.Osea,se busca establecer una relación lineal entre las variables para hacer predicciones o entender la relación entre ellas.
 Su objetivo es estimar los coeficientes de regresión (B0, B1, B2, ..., Bn) que minimicen la suma de los cuadrados de los residuos, es decir, la diferencia entre los valores observados de Y y los valores predichos por el modelo. El proceso de ajuste del modelo de regresión lineal implica varios pasos, como la selección de variables, la comprobación de supuestos, 
 la estimación de los coeficientes y la evaluación de la calidad del ajuste mediante medidas como el coeficiente de determinación (R²) y el análisis de los residuos.
 Por otra parte, la regresión lineal tiene varias extensiones, como la regresión lineal múltiple (cuando hay más de una variable independiente), la regresión lineal ponderada (cuando se asignan pesos diferentes a los puntos de datos) y la regresión lineal robusta (que es menos sensible a valores atípicos).
@@ -106,6 +107,8 @@ Donde:
 - X1, X2, ..., Xn son las variables independientes que se utilizan para predecir Y.
 - B0, B1, B2, ..., Bn son los coeficientes de regresión que representan el efecto de cada variable independiente sobre Y.
 - E es el término de error, que captura la variabilidad no explicada por el modelo y se asume que sigue una distribución normal con media cero.
+
+
 
 ## 4.2 Correlación Lineal de Pearson
 
